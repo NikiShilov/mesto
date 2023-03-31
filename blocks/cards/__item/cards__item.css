@@ -1,6 +1,6 @@
 .cards__item {
-    border-radius: 10px ;
+    border-radius: 10px;
     max-width: 282px;
-    box-sizing:content-box ;
+    box-sizing:content-box;
     background-color: white;
 }
