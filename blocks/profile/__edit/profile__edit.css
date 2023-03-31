@@ -1,0 +1,17 @@
+.profile__edit {
+    max-width: 24px;
+    min-height: 24px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+}
+
+@media all and (max-width:1279px) {
+    .profile__edit {
+        top: 8px;
+        right: 19px;
+        max-width: 18px;
+        min-height: 18px;
+    }
+
+}

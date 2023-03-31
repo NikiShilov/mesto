@@ -1,0 +1,14 @@
+.header__line {
+    width: 880px;
+    height: 0px;
+    opacity: 0.7;
+    border: 1px solid #545454;
+    position: absolute;
+    bottom: 0;
+}
+
+@media all and (max-width:880px) {
+    .header__line{
+        max-width: 99%;
+    }
+}

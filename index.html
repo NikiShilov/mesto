@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto</title>
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <img src="./images/logo.svg" class="header__logo" alt="Логотип Mesto">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <div class="profile__avatar"></div>
+                <div class="profile__info">
+                    <p class="profile__name">Жак-Ив Кусто</p>
+                    <p class="profile__text">Исследователь океана</p>
+                    <img src="./images/edit_button.svg" class="profile__edit link" alt="Кнопка редактирования">
+                </div>
+                <div class="profile__add">
+                <img src="./images/Vector.svg" class="profile__addbutton link" alt="Кнопка добавления">
+                </div>
+            </section>
+            <section class="cards">
+                <div class="cards__item">
+                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="cards__image" alt="Изображение Карачаевска">
+                    <div class="cards__info">
+                        <p class="cards__name">Карачаевск</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img src="./images/elbrus.png" class="cards__image" alt="Изображение Эльбруса">
+                    <div class="cards__info">
+                        <p class="cards__name">Гора Эльбрус</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img src="./images/dombay.png" class="cards__image" alt="Изображение Домбая">
+                    <div class="cards__info">
+                        <p class="cards__name">Домбай</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img src="./images/elbrus.png" class="cards__image" alt="Изображение Эльбруса">
+                    <div class="cards__info">
+                        <p class="cards__name">Гора Эльбрус</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img src="./images/dombay.png" class="cards__image" alt="Изображение Домбая">
+                    <div class="cards__info">
+                        <p class="cards__name">Домбай</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                    </div>
+                </div>
+                <div class="cards__item">
+                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="cards__image" alt="Изображение Карачаево-Черкесии">
+                    <div class="cards__info">
+                        <p class="cards__name">Карачаево-Черкесия</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer"><p class="footer__text">&copy; 2020 Mesto Russia</p></footer>
+    </div>
+    <section class="popup">
+        <div class="popup__container">
+        <img class="popup__close" src="./images/close_icon.svg" alt="Крестик">
+            <h2 class="popup__header">Редактировать профиль</h2>
+            <div class="popup__field"><input class="popup__name"></div>
+            <div class="popup__field"><input class="popup__text"></div>
+            <div class="popup__savebutton"></div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>

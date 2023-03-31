@@ -1,0 +1,25 @@
+.profile__text {
+    max-width: 336px;
+    font-family: 'Inter';
+    font-size: 18px;
+    line-height: 21.78px;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@media all and (max-width:1279px) {
+    .profile__text {
+        max-width: 282px;
+        margin: 0 auto 0;
+        font-size: 14px;
+        line-height: 16.94px;
+        text-align: center;
+        position: relative;
+        height:14px;
+    }
+    
+}
