@@ -12,69 +12,83 @@
     <div class="page">
         <header class="header">
             <img src="./images/logo.svg" class="header__logo" alt="Логотип Mesto">
+            <div class="header__line"></div>
         </header>
         <main class="content">
             <section class="profile">
                 <div class="profile__avatar"></div>
                 <div class="profile__info">
                     <p class="profile__name">Жак-Ив Кусто</p>
+                    <button class="profile__edit link" type="button"><img class="profile__image"
+                            src="./images/edit_button.svg" alt="Кнопка изменения профиля"></button>
                     <p class="profile__text">Исследователь океана</p>
-                    <img src="./images/edit_button.svg" class="profile__edit link" alt="Кнопка редактирования">
                 </div>
                 <div class="profile__add">
-                <img src="./images/Vector.svg" class="profile__addbutton link" alt="Кнопка добавления">
+                    <button type="button" class="profile__addbutton link"><img src="./images/add.svg"
+                            alt="Кнопка добавления публикаций"></button>
                 </div>
             </section>
             <section class="cards">
                 <div class="cards__item">
-                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="cards__image" alt="Изображение Карачаевска">
+                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="cards__image"
+                        alt="Изображение Карачаевска">
                     <div class="cards__info">
-                        <p class="cards__name">Карачаевск</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                        <p class="cards__name">Карачаевск</p><button class="cards__like" type="button"><img
+                                src="./images/heatt.svg" alt="Лайк"></button>
                     </div>
                 </div>
                 <div class="cards__item">
                     <img src="./images/elbrus.png" class="cards__image" alt="Изображение Эльбруса">
                     <div class="cards__info">
-                        <p class="cards__name">Гора Эльбрус</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                        <p class="cards__name">Гора Эльбрус</p><button class="cards__like" type="button"><img
+                                src="./images/heatt.svg" alt="Лайк"></button>
                     </div>
                 </div>
                 <div class="cards__item">
                     <img src="./images/dombay.png" class="cards__image" alt="Изображение Домбая">
                     <div class="cards__info">
-                        <p class="cards__name">Домбай</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                        <p class="cards__name">Домбай</p><button class="cards__like" type="button"><img
+                                src="./images/heatt.svg" alt="Лайк"></button>
                     </div>
                 </div>
                 <div class="cards__item">
                     <img src="./images/elbrus.png" class="cards__image" alt="Изображение Эльбруса">
                     <div class="cards__info">
-                        <p class="cards__name">Гора Эльбрус</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                        <p class="cards__name">Гора Эльбрус</p><button class="cards__like" type="button"><img
+                                src="./images/heatt.svg" alt="Лайк"></button>
                     </div>
                 </div>
                 <div class="cards__item">
                     <img src="./images/dombay.png" class="cards__image" alt="Изображение Домбая">
                     <div class="cards__info">
-                        <p class="cards__name">Домбай</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                        <p class="cards__name">Домбай</p><button class="cards__like" type="button"><img
+                                src="./images/heatt.svg" alt="Лайк"></button>
                     </div>
                 </div>
                 <div class="cards__item">
-                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="cards__image" alt="Изображение Карачаево-Черкесии">
+                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="cards__image"
+                        alt="Изображение Карачаево-Черкесии">
                     <div class="cards__info">
-                        <p class="cards__name">Карачаево-Черкесия</p><img src="./images/heatt.svg" class="cards__like" alt="Лайк">
+                        <p class="cards__name">Карачаево-Черкесия</p><button class="cards__like" type="button"><img
+                                src="./images/heatt.svg" alt="Лайк"></button>
                     </div>
                 </div>
             </section>
         </main>
-        <footer class="footer"><p class="footer__text">&copy; 2020 Mesto Russia</p></footer>
+        <footer class="footer">
+            <p class="footer__text">&copy; 2020 Mesto Russia</p>
+        </footer>
     </div>
     <section class="popup">
-        <div class="popup__container">
-        <img class="popup__close" src="./images/close_icon.svg" alt="Крестик">
+        <form class="popup__container">
+            <img class="popup__close" src="./images/close_icon.svg" alt="Крестик">
             <h2 class="popup__header">Редактировать профиль</h2>
             <div class="popup__field"><input class="popup__name"></div>
             <div class="popup__field"><input class="popup__text"></div>
-            <div class="popup__savebutton"></div>
-        </div>
+            <button class="popup__savebutton" type="submit"><span class="popup__save">Сохранить</span></button>
+        </form>
     </section>
-    <script src="./scripts/script.js"></script>
+    <script src="./script.js"></script>
 </body>
+
 </html>

@@ -32,5 +32,5 @@ function handleFormSubmit(evt) {
 }
 
 
-popupSave.addEventListener('click', handleFormSubmit);
+popupContainer.addEventListener('submit', handleFormSubmit);
 

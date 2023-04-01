@@ -2,12 +2,12 @@
     max-width: 880px;
     min-height: 74px;
     padding-top: 45px;
-    margin: auto;
     position: relative;
-    border-bottom: 1px solid #545454;
+    display: inline-block;
+    margin: auto;
 }
 
-@media all and  (max-width:880px) {
+@media all and (max-width:880px) {
     .header {
         max-width: 100%;
         min-height: 56px;

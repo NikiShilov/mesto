@@ -1,5 +1,5 @@
 .profile__name {
-    max-width: 294px;
+    max-width: 494px;
     height: 39px;
     font-family: 'Inter';
     font-size: 42px;
@@ -7,20 +7,18 @@
     font-weight: 500;
     color: white;
     margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+    white-space: nowrap;
 }
 
 @media all and (max-width:1279px) {
-    .profile__name{
-        width: 189px;
+    .profile__name {
+        max-width: 189px;
         height: 26px;
         font-size: 27px;
         line-height: 32.68px;
         text-align: center;
-        margin: 0 46px 14px 46px;
+        margin: 0 0 14px 46px;
         position: relative;
     }
-    
+
 }

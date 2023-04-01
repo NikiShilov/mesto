@@ -5,10 +5,8 @@
     line-height: 21.78px;
     font-weight: 400;
     color: white;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    margin-top: 16px;
+    white-space: nowrap;
 }
 
 @media all and (max-width:1279px) {
@@ -19,7 +17,7 @@
         line-height: 16.94px;
         text-align: center;
         position: relative;
-        height:14px;
+        height: 14px;
     }
-    
+
 }

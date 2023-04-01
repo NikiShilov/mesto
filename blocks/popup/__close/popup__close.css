@@ -8,12 +8,12 @@
 
 
 @media all and (max-width:1279px) {
-    
-.popup__close {
-    max-width: 20px;
-    min-height: 20px;
-    position: absolute;
-    top: -36px;
-    right: 0;
-}
+
+    .popup__close {
+        max-width: 20px;
+        min-height: 20px;
+        position: absolute;
+        top: -36px;
+        right: 0;
+    }
 }

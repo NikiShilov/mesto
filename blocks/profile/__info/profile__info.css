@@ -1,8 +1,11 @@
 .profile__info {
-    width: 336px;
+    max-width: 500px;
     min-height: 73px;
-    margin: 22px 244px 59px 30px;
+    margin: 22px 80px 0 30px;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 @media all and (max-width:1279px) {
@@ -11,5 +14,5 @@
         min-height: 54px;
         margin: 0;
     }
-    
+
 }
