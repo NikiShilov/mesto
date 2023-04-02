@@ -1,12 +1,14 @@
 .profile__text {
     max-width: 336px;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', 'sans-serif';
     font-size: 18px;
     line-height: 21.78px;
     font-weight: 400;
     color: white;
     margin-top: 16px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media all and (max-width:1279px) {
@@ -17,7 +19,6 @@
         line-height: 16.94px;
         text-align: center;
         position: relative;
-        height: 14px;
     }
 
 }

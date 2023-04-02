@@ -2,6 +2,7 @@
     max-width: 24px;
     height: 24px;
     margin: 15px 0 0 18px;
+    cursor: pointer;
 }
 
 @media all and (max-width:1279px) {

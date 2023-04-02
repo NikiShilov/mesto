@@ -1,8 +1,17 @@
 .footer__text {
     max-width: 318px;
-    font-family: 'inter';
+    font-family: 'Inter', 'Arial', 'sans-serif';
     font-size: 18px;
-    font-weight: 400px;
+    font-weight: 400;
     line-height: 21.78px;
     color: #545454;
+    margin: 0;
+}
+
+@media all and (max-width:880px) {
+    .footer__text {
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+    
 }
