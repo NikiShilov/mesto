@@ -11,7 +11,7 @@
 @media all and (max-width:1279px) {
     .profile {
         max-width: 282px;
-        margin: 42px auto 36px;
+        margin: 42px auto 0;
         flex-direction: column;
         justify-content: flex-start;
     }
