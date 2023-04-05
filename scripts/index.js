@@ -122,7 +122,7 @@ function handleAddSubmit(evt) {
         link: imageInput.value
     });
     cards.prepend(newCard);
-    closeAdd();
+    toggleAdd();
 };
 formAdd.addEventListener('submit', handleAddSubmit);
 
