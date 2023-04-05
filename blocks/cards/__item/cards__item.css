@@ -4,4 +4,7 @@
     box-sizing: content-box;
     background-color: white;
     height: 361px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }

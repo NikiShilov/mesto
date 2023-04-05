@@ -1,0 +1,5 @@
+.cards__image_open {
+    background-color: rgba(0,0,0,0.7);
+    max-width: 75vw;
+    max-height: 75vh;
+}
