@@ -18,8 +18,7 @@
                 <div class="profile__avatar"></div>
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button class="profile__edit link" type="button"><img class="profile__image"
-                            src="./images/edit_button.svg" alt="Кнопка изменения профиля"></button>
+                    <button class="profile__edit link" type="button"></button>
                     <p class="profile__text">Исследователь океана</p>
                 </div>
 
@@ -34,33 +33,33 @@
             <p class="footer__text">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
-    <section class="popup">
+    <section class="popup" id="popup__profile">
         <div class="popup__container">
             <button class="popup__close link" type="button"></button>
             <h2 class="popup__header">Редактировать профиль</h2>
             <form name="form" class="popup__form">
-                <input class="popup__input popup__input_type_name" name="nameInput">
-                <input class="popup__input popup__input_type_text" name="jobInput">
+                <input class="popup__input popup__input_name" name="nameInput">
+                <input class="popup__input popup__input_text" name="jobInput">
                 <button class="popup__save-button link" type="submit">Сохранить</button>
             </form>
         </div>
     </section>
 
-    <section class="popup" id = "popup__add">
+    <section class="popup" id="popup__add">
         <div class="popup__container">
             <button class="popup__close  link" type="button"></button>
             <h2 class="popup__header">Новое место</h2>
             <form name="form" class="popup__form">
-                <input type="text" placeholder="Название" class="popup__input popup__input_type_name" name="name"
+                <input type="text" placeholder="Название" class="popup__input popup__input_name" name="name"
                     id="cardNameInput">
-                <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_type_text"
+                <input type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_text"
                     name="image" id="imageInput">
                 <button class="popup__save-button  link" type="submit">Создать</button>
             </form>
         </div>
     </section>
 
-    <div class="popup" id = "popup__open-image">
+    <div class="popup" id="popup__open-image">
         <div class="popup__image-container">
             <img src="#" alt="Увеличенное изображение" class="popup__image">
             <p class="popup__image-caption"></p>
@@ -70,7 +69,7 @@
 
     <template id="cards__template">
         <div class="cards__item">
-            <div class="cards__delete link"></div>
+            <button class="cards__delete link"></button>
             <img src="#" class="cards__image" alt="">
             <div class="cards__info">
                 <h2 class="cards__name"></h2><button class="cards__like link" type="button"></button>

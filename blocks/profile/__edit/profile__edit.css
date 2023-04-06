@@ -1,13 +1,17 @@
 .profile__edit {
-    max-width: 24px;
+    width: 24px;
     height: 24px;
     margin: 15px 0 0 18px;
     cursor: pointer;
+    background-color: black;
+    background-image: url(../../../images/edit_button.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media all and (max-width:1279px) {
     .profile__edit {
-        max-width: 18px;
+        width: 18px;
         height: 18px;
         margin: 8px 0 0 10px;
     }

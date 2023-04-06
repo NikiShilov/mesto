@@ -1,60 +1,58 @@
-let profile = document.querySelector('.profile');
+const profile = document.querySelector('.profile');
 let profileEdit = profile.querySelector('.profile__edit');
 let profileName = profile.querySelector('.profile__name');
 let profileText = profile.querySelector('.profile__text');
 let popup = document.querySelector('.popup');
+let popupProfile = document.querySelector('#popup__profile');
 let popupContainer = popup.querySelector('.popup__container');
 let popupClose = popupContainer.querySelector('.popup__close');
 let form = popupContainer.querySelector('.popup__form');
-let nameInput = popupContainer.querySelector('.popup__input_type_name');
-let jobInput = popupContainer.querySelector('.popup__input_type_text');
+let nameInput = popupContainer.querySelector('.popup__input_name');
+let jobInput = popupContainer.querySelector('.popup__input_text');
 let cards = document.querySelector('.cards');
 let profileAdd = profile.querySelector('.profile__add-button');
 let addPopup = document.querySelector('#popup__add');
 let addContainer = addPopup.querySelector('.popup__container');
 let formAdd = addContainer.querySelector('.popup__form');
 let addClose = addContainer.querySelector('.popup__close');
-let cardNameInput = addPopup.querySelector('.popup__input_type_name');
-let imageInput = addPopup.querySelector('.popup__input_type_text');
+let cardNameInput = addPopup.querySelector('.popup__input_name');
+let imageInput = addPopup.querySelector('.popup__input_text');
 let imagePopup = document.querySelector('#popup__open-image');
 let imageContainer = imagePopup.querySelector('.popup__image-container');
 let imageImage = imageContainer.querySelector('.popup__image');
 let imageCaption = imageContainer.querySelector('.popup__image-caption');
 let imageClose = imageContainer.querySelector('.popup__close');
 
+nameInput.value = profileName.textContent;
+jobInput.value = profileText.textContent;
 
-function openPopup() {
-    popup.classList.add('popup_opened');
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileText.textContent;
+
+function togglePopup(popup) {
+    popup.classList.toggle('popup_opened');
+
 }
-
-function closePopup() {
-    popup.classList.remove('popup_opened');
-}
-
-function toggleAdd() {
-    addPopup.classList.toggle('popup_opened');
-}
-
-
-
-
 
 function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileText.textContent = jobInput.value;
-    closePopup();
+    togglePopup(popupProfile);
 }
+popupClose.addEventListener('click', function () {
+    togglePopup(popupProfile);
+});
 
-profileEdit.addEventListener('click', openPopup);
+profileEdit.addEventListener('click', function () {
+    togglePopup(popupProfile);
+});
 
-popupClose.addEventListener('click', closePopup);
+profileAdd.addEventListener('click', function () {
+    togglePopup(addPopup);
+});
 
-profileAdd.addEventListener('click', toggleAdd);
-
-addClose.addEventListener('click', toggleAdd);
+addClose.addEventListener('click', function () {
+    togglePopup(addPopup);
+});
 
 form.addEventListener('submit', handleFormSubmit);
 
@@ -88,7 +86,7 @@ const initialCards = [
 
 
 
-function addCard(item) {
+function createCardElement(item) {
     const cardTemplate = document.querySelector("#cards__template").content;
     const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
     const cardName = cardElement.querySelector('.cards__name');
@@ -111,23 +109,25 @@ function addCard(item) {
 }
 
 initialCards.forEach(element => {
-    let newCard = addCard(element);
+    let newCard = createCardElement(element);
     cards.append(newCard);
 });
 
 function handleAddSubmit(evt) {
     evt.preventDefault();
-    const newCard = addCard({
+    const newCard = createCardElement({
         name: cardNameInput.value,
         link: imageInput.value
     });
     cards.prepend(newCard);
-    toggleAdd();
+    evt.target.reset();
+    togglePopup(addPopup);
 };
 formAdd.addEventListener('submit', handleAddSubmit);
 
 function openImage(item) {
     imageImage.src = item.link;
+    imageImage.alt = item.name;
     imageCaption.textContent = item.name;
     imagePopup.classList.add('popup_opened');
 }

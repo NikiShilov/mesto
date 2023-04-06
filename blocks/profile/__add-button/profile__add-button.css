@@ -8,6 +8,7 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-color: black;
 }
 
 @media all and (max-width:1279px) {

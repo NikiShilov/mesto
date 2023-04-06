@@ -1,4 +1,4 @@
-.popup__input_type_text {
+.popup__input_text {
     font-family: 'Inter', 'Arial', 'sans-serif';
     font-size: 14px;
     line-height: 16.94px;
@@ -10,7 +10,7 @@
 }
 
 @media all and (max-width:1279px) {
-    .popup__input_type_text {
+    .popup__input_text {
         margin: 30px 22px 45px 22px;
     }
 }
