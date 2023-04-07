@@ -8,7 +8,7 @@
     align-items: center;
     opacity: 0;
     display: flex;
-    transition: opacity 0.3s linear;
+    transition: opacity .3s linear;
     pointer-events: none;
     z-index: 2;
 }
