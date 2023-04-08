@@ -1,33 +1,30 @@
-let popup = document.querySelector('.popup');
+const popup = document.querySelector('.popup');
 
 const profile = document.querySelector('.profile');
 const profileEdit = profile.querySelector('.profile__edit');
-let profileName = profile.querySelector('.profile__name');
-let profileText = profile.querySelector('.profile__text');
+const profileName = profile.querySelector('.profile__name');
+const profileText = profile.querySelector('.profile__text');
 const profileAdd = profile.querySelector('.profile__add-button');
-let popupProfile = document.querySelector('#popup__profile');
-let popupProfileContainer = popupProfile.querySelector('.popup__container');
+const popupProfile = document.querySelector('#popup__profile');
+const popupProfileContainer = popupProfile.querySelector('.popup__container');
 const popupProfileClose = popupProfileContainer.querySelector('.popup__close');
-let formProfile = popupProfileContainer.querySelector('.popup__form');
+const formProfile = popupProfileContainer.querySelector('.popup__form');
 let nameInput = popupProfileContainer.querySelector('.popup__input_name');
 let jobInput = popupProfileContainer.querySelector('.popup__input_text');
 
-let cards = document.querySelector('.cards');
-let addPopup = document.querySelector('#popup__add');
-let addContainer = addPopup.querySelector('.popup__container');
-let formAdd = addContainer.querySelector('.popup__form');
+const cards = document.querySelector('.cards');
+const addPopup = document.querySelector('#popup__add');
+const addContainer = addPopup.querySelector('.popup__container');
+const formAdd = addContainer.querySelector('.popup__form');
 const addClose = addContainer.querySelector('.popup__close');
 let cardNameInput = addPopup.querySelector('.popup__input_name');
 let imageInput = addPopup.querySelector('.popup__input_text');
 
-let imagePopup = document.querySelector('#popup__open-image');
-let imageContainer = imagePopup.querySelector('.popup__image-container');
-let imageImage = imageContainer.querySelector('.popup__image');
-let imageCaption = imageContainer.querySelector('.popup__image-caption');
+const imagePopup = document.querySelector('#popup__open-image');
+const imageContainer = imagePopup.querySelector('.popup__image-container');
+const imageImage = imageContainer.querySelector('.popup__image');
+const imageCaption = imageContainer.querySelector('.popup__image-caption');
 const imageClose = imageContainer.querySelector('.popup__close');
-
-nameInput.value = profileName.textContent;
-jobInput.value = profileText.textContent;
 
 function togglePopup(popup) {
     popup.classList.toggle('popup_opened');
@@ -46,6 +43,8 @@ popupProfileClose.addEventListener('click', function () {
 });
 
 profileEdit.addEventListener('click', function () {
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileText.textContent;
     togglePopup(popupProfile);
 });
 
