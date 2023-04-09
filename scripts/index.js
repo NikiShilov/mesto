@@ -9,16 +9,16 @@ const popupProfile = document.querySelector('#popup__profile');
 const popupProfileContainer = popupProfile.querySelector('.popup__container');
 const popupProfileClose = popupProfileContainer.querySelector('.popup__close');
 const formProfile = popupProfileContainer.querySelector('.popup__form');
-let nameInput = popupProfileContainer.querySelector('.popup__input_name');
-let jobInput = popupProfileContainer.querySelector('.popup__input_text');
+const nameInput = popupProfileContainer.querySelector('.popup__input_name');
+const jobInput = popupProfileContainer.querySelector('.popup__input_text');
 
 const cards = document.querySelector('.cards');
 const addPopup = document.querySelector('#popup__add');
 const addContainer = addPopup.querySelector('.popup__container');
 const formAdd = addContainer.querySelector('.popup__form');
 const addClose = addContainer.querySelector('.popup__close');
-let cardNameInput = addPopup.querySelector('.popup__input_name');
-let imageInput = addPopup.querySelector('.popup__input_text');
+const cardNameInput = addPopup.querySelector('.popup__input_name');
+const imageInput = addPopup.querySelector('.popup__input_text');
 
 const imagePopup = document.querySelector('#popup__open-image');
 const imageContainer = imagePopup.querySelector('.popup__image-container');
@@ -128,11 +128,11 @@ function openImage(item) {
     imageImage.src = item.link;
     imageImage.alt = item.name;
     imageCaption.textContent = item.name;
-    imagePopup.classList.add('popup_opened');
+    togglePopup(imagePopup);
 }
 
 function closeImage() {
-    imagePopup.classList.remove('popup_opened');
+    togglePopup(imagePopup);
 }
 
 imageClose.addEventListener('click', closeImage);
