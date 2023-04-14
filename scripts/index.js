@@ -26,34 +26,39 @@ const imageImage = imageContainer.querySelector('.popup__image');
 const imageCaption = imageContainer.querySelector('.popup__image-caption');
 const imageClose = imageContainer.querySelector('.popup__close');
 
-function togglePopup(popup) {
-    popup.classList.toggle('popup_opened');
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closePopupClickEsc);
+    popup.addEventListener('click', closePopupClickOvr);
+}
 
+function closePopup(popup) {
+    popup.classList.remove('popup_opened');
 }
 
 function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileText.textContent = jobInput.value;
-    togglePopup(popupProfile);
+    closePopup(popupProfile);
 }
 
 popupProfileClose.addEventListener('click', function () {
-    togglePopup(popupProfile);
+    closePopup(popupProfile);
 });
 
 profileEdit.addEventListener('click', function () {
     nameInput.value = profileName.textContent;
     jobInput.value = profileText.textContent;
-    togglePopup(popupProfile);
+    openPopup(popupProfile);
 });
 
 profileAdd.addEventListener('click', function () {
-    togglePopup(addPopup);
+    openPopup(addPopup);
 });
 
 addClose.addEventListener('click', function () {
-    togglePopup(addPopup);
+    closePopup(addPopup);
 });
 
 formProfile.addEventListener('submit', handleFormSubmit);
@@ -120,7 +125,7 @@ function handleAddSubmit(evt) {
     });
     cards.prepend(newCard);
     evt.target.reset();
-    togglePopup(addPopup);
+    closePopup(addPopup);
 };
 formAdd.addEventListener('submit', handleAddSubmit);
 
@@ -128,11 +133,26 @@ function openImage(item) {
     imageImage.src = item.link;
     imageImage.alt = item.name;
     imageCaption.textContent = item.name;
-    togglePopup(imagePopup);
+    openPopup(imagePopup);
 }
 
 function closeImage() {
-    togglePopup(imagePopup);
+    closePopup(imagePopup);
 }
 
 imageClose.addEventListener('click', closeImage);
+
+
+const closePopupClickEsc = (evt) => {
+    if (evt.key === 'Escape') {
+        const popupOpened = document.querySelector('.popup_opened');
+        closePopup(popupOpened);
+    }
+}
+
+const closePopupClickOvr = (evt) => {
+    if (evt.target === evt.currentTarget) {
+        const popupOpened = document.querySelector('.popup_opened');
+        closePopup(popupOpened);
+    }
+}
