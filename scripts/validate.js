@@ -85,14 +85,10 @@ const disableButton = (buttonElement, config) => {
     buttonElement.setAttribute('disabled', true);
 }
 
-function resetErrors(formElement, config) {
-    
-    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
-    inputList.forEach((inputElement) => {
-        const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-        hideInputError(errorElement, inputElement, config);
-    });
-    const buttonElement = formElement.querySelector(config.submitButtonSelector);
-    disableButton(buttonElement, config);
-}
+const removeValidationErrors = function (formElement,inputs, configValidation) {
+    inputs.forEach(input => {
+        hideInputError(formElement, input, configValidation);
+    })
+};
+
 enableValidation(configValidation);

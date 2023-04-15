@@ -8,4 +8,5 @@
     margin: 5px 36px 0 36px;
     display: block;
     visibility: hidden;
+    min-height: 18px;
 }

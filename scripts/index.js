@@ -4,6 +4,8 @@ const profileName = profile.querySelector('.profile__name');
 const profileText = profile.querySelector('.profile__text');
 const profileAdd = profile.querySelector('.profile__add-button');
 const popupProfile = document.querySelector('#popup__profile');
+const popupProfileInputs = popupProfile.querySelectorAll('.popup__input');
+const formButtonProfile = popupProfile.querySelector('.popup__save-button');
 const popupProfileContainer = popupProfile.querySelector('.popup__container');
 const popupProfileClose = popupProfileContainer.querySelector('.popup__close');
 const formProfile = popupProfileContainer.querySelector('.popup__form');
@@ -12,6 +14,8 @@ const jobInput = popupProfileContainer.querySelector('.popup__input_text');
 
 const cards = document.querySelector('.cards');
 const addPopup = document.querySelector('#popup__add');
+const popupAddInputs = addPopup.querySelectorAll('.popup__input');
+const formButtonAdd = popupProfile.querySelector('.popup__save-button');
 const addContainer = addPopup.querySelector('.popup__container');
 const formAdd = addContainer.querySelector('.popup__form');
 const addClose = addContainer.querySelector('.popup__close');
@@ -50,18 +54,18 @@ popupProfileClose.addEventListener('click', function () {
 profileEdit.addEventListener('click', function () {
     nameInput.value = profileName.textContent;
     jobInput.value = profileText.textContent;
-    const formButton = popupProfile.querySelector('.popup__save-button');
-    disableButton(formButton, {inactiveButtonClass:configValidation.inactiveButtonClass});
+    disableButton(formButtonProfile, {inactiveButtonClass:configValidation.inactiveButtonClass});
+    removeValidationErrors(popupProfile, popupProfileInputs, configValidation);
     openPopup(popupProfile);
 });
 
 profileAdd.addEventListener('click', function () {
-    cardNameInput.textContent = '';
-    imageInput.textContent = '';
-    const formButton = addPopup.querySelector('.popup__save-button');
-    disableButton(formButton, {inactiveButtonClass:configValidation.inactiveButtonClass})
+    cardNameInput.value = '';
+    imageInput.value = '';
+    disableButton(formButtonAdd, {inactiveButtonClass:configValidation.inactiveButtonClass});
+    removeValidationErrors(addPopup, popupAddInputs, configValidation)
     openPopup(addPopup);
-});
+}); 
 
 addClose.addEventListener('click', function () {
     closePopup(addPopup);
