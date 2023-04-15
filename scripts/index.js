@@ -1,5 +1,3 @@
-const popup = document.querySelector('.popup');
-
 const profile = document.querySelector('.profile');
 const profileEdit = profile.querySelector('.profile__edit');
 const profileName = profile.querySelector('.profile__name');
@@ -34,9 +32,11 @@ function openPopup(popup) {
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePopupClickEsc);
+    popup.removeEventListener('click', closePopupClickOvr);
 }
 
-function handleFormSubmit(evt) {
+function handleProfileSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileText.textContent = jobInput.value;
@@ -50,10 +50,16 @@ popupProfileClose.addEventListener('click', function () {
 profileEdit.addEventListener('click', function () {
     nameInput.value = profileName.textContent;
     jobInput.value = profileText.textContent;
+    const formButton = popupProfile.querySelector('.popup__save-button');
+    disableButton(formButton, {inactiveButtonClass:configValidation.inactiveButtonClass});
     openPopup(popupProfile);
 });
 
 profileAdd.addEventListener('click', function () {
+    cardNameInput.textContent = '';
+    imageInput.textContent = '';
+    const formButton = addPopup.querySelector('.popup__save-button');
+    disableButton(formButton, {inactiveButtonClass:configValidation.inactiveButtonClass})
     openPopup(addPopup);
 });
 
@@ -61,7 +67,7 @@ addClose.addEventListener('click', function () {
     closePopup(addPopup);
 });
 
-formProfile.addEventListener('submit', handleFormSubmit);
+formProfile.addEventListener('submit', handleProfileSubmit);
 
 const initialCards = [
     {
@@ -113,7 +119,7 @@ function createCardElement(item) {
 }
 
 initialCards.forEach(element => {
-    let newCard = createCardElement(element);
+    const newCard = createCardElement(element);
     cards.append(newCard);
 });
 
@@ -152,7 +158,6 @@ const closePopupClickEsc = (evt) => {
 
 const closePopupClickOvr = (evt) => {
     if (evt.target === evt.currentTarget) {
-        const popupOpened = document.querySelector('.popup_opened');
-        closePopup(popupOpened);
+        closePopup(evt.currentTarget);
     }
 }
