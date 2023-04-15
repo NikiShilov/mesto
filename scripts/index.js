@@ -15,7 +15,7 @@ const jobInput = popupProfileContainer.querySelector('.popup__input_text');
 const cards = document.querySelector('.cards');
 const addPopup = document.querySelector('#popup__add');
 const popupAddInputs = addPopup.querySelectorAll('.popup__input');
-const formButtonAdd = popupProfile.querySelector('.popup__save-button');
+const formButtonAdd = addPopup.querySelector('.popup__save-button');
 const addContainer = addPopup.querySelector('.popup__container');
 const formAdd = addContainer.querySelector('.popup__form');
 const addClose = addContainer.querySelector('.popup__close');
@@ -63,7 +63,7 @@ profileAdd.addEventListener('click', function () {
     cardNameInput.value = '';
     imageInput.value = '';
     disableButton(formButtonAdd, {inactiveButtonClass:configValidation.inactiveButtonClass});
-    removeValidationErrors(addPopup, popupAddInputs, configValidation)
+    removeValidationErrors(addPopup,popupAddInputs, configValidation)
     openPopup(addPopup);
 }); 
 

@@ -89,6 +89,7 @@ const removeValidationErrors = function (formElement,inputs, configValidation) {
     inputs.forEach(input => {
         hideInputError(formElement, input, configValidation);
     })
+
 };
 
 enableValidation(configValidation);
