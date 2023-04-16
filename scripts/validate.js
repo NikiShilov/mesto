@@ -45,6 +45,7 @@ const setEventListeners = (formElement, config) => {
             }
         });
     });
+    
 };
 
 const enableValidation = (config) => {
@@ -65,7 +66,7 @@ function hasInvalidInput(inputList) {
 
 
 
-function enableButton(buttonElement, config) {
+const enableButton = (buttonElement, config) {
     buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.removeAttribute('disabled');
