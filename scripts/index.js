@@ -59,9 +59,8 @@ profileEdit.addEventListener('click', function () {
 });
 
 profileAdd.addEventListener('click', function () {
-    cardNameInput.value = '';
-    imageInput.value = '';
-    disableButton(formButtonAdd, {inactiveButtonClass:configValidation.inactiveButtonClass});
+    formAdd.reset();
+    disableButton(formButtonAdd, configValidation);
     removeValidationErrors(addPopup,popupAddInputs, configValidation)
     openPopup(addPopup);
 }); 
@@ -133,7 +132,6 @@ function handleAddSubmit(evt) {
         link: imageInput.value
     });
     cards.prepend(newCard);
-    evt.target.reset();
     closePopup(addPopup);
 };
 formAdd.addEventListener('submit', handleAddSubmit);

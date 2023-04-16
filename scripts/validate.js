@@ -34,18 +34,14 @@ const checkInputValidation = (formElement, inputElement, config) => {
 const setEventListeners = (formElement, config) => {
     const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
     const buttonElement = formElement.querySelector(config.submitButtonSelector);
+    toggleButtonState(inputList, buttonElement, config);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
             checkInputValidation(formElement, inputElement, config);
-            if(hasInvalidInput(inputList)) {
-                disableButton(buttonElement, config)
-            }
-            else {
-                enableButton(buttonElement, config)
-            }
+            toggleButtonState(inputList, buttonElement, config)
         });
     });
-    
+
 };
 
 const enableValidation = (config) => {
@@ -67,22 +63,31 @@ function hasInvalidInput(inputList) {
 
 
 const enableButton = (buttonElement, config) => {
-    buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.removeAttribute('disabled');
 }
 
 const disableButton = (buttonElement, config) => {
-    buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.setAttribute('disabled', true);
 }
 
-const removeValidationErrors = function (formElement,inputs, configValidation) {
+const removeValidationErrors = function (formElement, inputs, configValidation) {
     inputs.forEach(input => {
         hideInputError(formElement, input, configValidation);
     })
 
+};
+
+function toggleButtonState(inputList, buttonElement, config) {
+    if (hasInvalidInput(inputList)) {
+        buttonElement.classList.add(config.inactiveButtonClass);
+        buttonElement.disabled = true;
+    }
+    else {
+        buttonElement.classList.remove(config.inactiveButtonClass);
+        buttonElement.disabled = false;
+    }
 };
 
 enableValidation(configValidation);
