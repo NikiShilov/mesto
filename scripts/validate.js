@@ -34,14 +34,14 @@ const checkInputValidation = (formElement, inputElement, config) => {
 const setEventListeners = (formElement, config) => {
     const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
     const buttonElement = formElement.querySelector(config.submitButtonSelector);
-    toggleButtonState(inputList, buttonElement, config);
+    toggleButtonState(inputList, buttonElement, config)
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
             checkInputValidation(formElement, inputElement, config);
-            toggleButtonState(inputList, buttonElement, config)
+            toggleButtonState(inputList, buttonElement,config);
         });
     });
-
+    
 };
 
 const enableValidation = (config) => {
@@ -72,7 +72,7 @@ const disableButton = (buttonElement, config) => {
     buttonElement.setAttribute('disabled', true);
 }
 
-const removeValidationErrors = function (formElement, inputs, configValidation) {
+const removeValidationErrors = function (formElement,inputs, configValidation) {
     inputs.forEach(input => {
         hideInputError(formElement, input, configValidation);
     })
