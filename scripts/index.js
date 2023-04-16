@@ -54,7 +54,6 @@ popupProfileClose.addEventListener('click', function () {
 profileEdit.addEventListener('click', function () {
     nameInput.value = profileName.textContent;
     jobInput.value = profileText.textContent;
-    disableButton(formButtonProfile, {inactiveButtonClass:configValidation.inactiveButtonClass});
     removeValidationErrors(popupProfile, popupProfileInputs, configValidation);
     openPopup(popupProfile);
 });
