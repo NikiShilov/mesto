@@ -2,7 +2,7 @@ const configValidation = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__save-button',
-    inactiveButtonClass: '.popup__save-button_inactive',
+    inactiveButtonClass: 'popup__save-button_inactive',
     inputErrorClass: 'popup__input-error_active',
     errorClass: 'popup__span-error_active'
 };
@@ -30,14 +30,6 @@ const checkInputValidation = (formElement, inputElement, config) => {
     }
 };
 
-const checkButton = (formElement, config) => {
-    const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
-    const buttonElement = formElement.querySelector(config.submitButtonSelector);
-    toggleButtonState(inputList, buttonElement, config);
-    inputList.forEach((inputElement) => {
-        hideInputError(formElement, inputElement, config);
-    });
-};
 
 const setEventListeners = (formElement, config) => {
     const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
